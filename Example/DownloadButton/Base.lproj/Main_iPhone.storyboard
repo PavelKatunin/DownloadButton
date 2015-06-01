@@ -1,27 +1,403 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="KHt-n0-t4W">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--custom appearance-->
+        <scene sceneID="h7X-ZL-Zqy">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="PKViewController" sceneMemberID="viewController">
+                <viewController id="4TN-fF-nTR" customClass="PKCustomAppearanceViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="XHk-Ks-1hH"/>
+                        <viewControllerLayoutGuide type="bottom" id="scB-Jc-fAj"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <view key="view" contentMode="scaleToFill" id="JW6-Xx-oSq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QaY-op-GgK" customClass="PKDownloadButton">
+                                <rect key="frame" x="165" y="40" width="84" height="77"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="epM-pw-a0l"/>
+                                    <constraint firstAttribute="width" constant="84" id="tjX-Cn-y3F"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="4TN-fF-nTR" id="GHT-D3-cI4"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download some random legendary guy picture" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDw-dt-j7C">
+                                <rect key="frame" x="27" y="133" width="358.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" image="majestic" translatesAutoresizingMaskIntoConstraints="NO" id="3uj-a3-y7t">
+                                <rect key="frame" x="25" y="175" width="364" height="511.5"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zDw-dt-j7C" firstAttribute="top" secondItem="QaY-op-GgK" secondAttribute="bottom" constant="16" id="1YU-yJ-wtQ"/>
+                            <constraint firstItem="QaY-op-GgK" firstAttribute="top" secondItem="XHk-Ks-1hH" secondAttribute="bottom" constant="20" id="6s7-w7-duj"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="zDw-dt-j7C" secondAttribute="trailing" constant="9" id="A0d-Y4-KFj"/>
+                            <constraint firstAttribute="centerX" secondItem="3uj-a3-y7t" secondAttribute="centerX" id="D11-CK-lGT"/>
+                            <constraint firstAttribute="trailing" secondItem="3uj-a3-y7t" secondAttribute="trailing" constant="25" id="Gkk-Li-0Kl"/>
+                            <constraint firstItem="scB-Jc-fAj" firstAttribute="top" secondItem="3uj-a3-y7t" secondAttribute="bottom" id="Ti7-n2-lj8"/>
+                            <constraint firstItem="3uj-a3-y7t" firstAttribute="top" secondItem="zDw-dt-j7C" secondAttribute="bottom" constant="21.5" id="fzH-Vs-AXY"/>
+                            <constraint firstAttribute="centerX" secondItem="zDw-dt-j7C" secondAttribute="centerX" id="iAU-DD-rd5"/>
+                            <constraint firstItem="zDw-dt-j7C" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JW6-Xx-oSq" secondAttribute="leadingMargin" constant="9" id="iQq-Fn-lhp"/>
+                            <constraint firstItem="3uj-a3-y7t" firstAttribute="leading" secondItem="JW6-Xx-oSq" secondAttribute="leading" constant="25" id="vlx-H7-Qkw"/>
+                            <constraint firstAttribute="centerX" secondItem="QaY-op-GgK" secondAttribute="centerX" id="zbS-a4-Kba"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="custom appearance" id="mX6-2v-t2y"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="downloadButton" destination="QaY-op-GgK" id="2oT-Un-B1D"/>
+                        <outlet property="imageView" destination="3uj-a3-y7t" id="Ago-Z0-hBF"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KGz-GR-MBk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="22" y="406"/>
+        </scene>
+        <!--default appearance-->
+        <scene sceneID="Bx7-2o-Lgu">
+            <objects>
+                <viewController id="FkK-Aq-NJ0" customClass="PKDefaultAppearanceViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q5w-jx-g0c"/>
+                        <viewControllerLayoutGuide type="bottom" id="5cU-9z-uTH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iMh-5a-nie">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1MY-0w-kx3" customClass="PKDownloadButton">
+                                <rect key="frame" x="160.5" y="40" width="93" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Dao-B8-ybj"/>
+                                    <constraint firstAttribute="width" constant="93" id="ceu-Lh-cGh"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="FkK-Aq-NJ0" id="THx-wL-SlO"/>
+                                </connections>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="handsome" translatesAutoresizingMaskIntoConstraints="NO" id="khe-bG-0y6">
+                                <rect key="frame" x="25" y="117" width="364" height="569.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download some random majestic guy picture" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8O5-Sb-gmr">
+                                <rect key="frame" x="33" y="83" width="347" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5cU-9z-uTH" firstAttribute="top" secondItem="khe-bG-0y6" secondAttribute="bottom" id="7WE-Cg-xs8"/>
+                            <constraint firstItem="8O5-Sb-gmr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iMh-5a-nie" secondAttribute="leadingMargin" constant="9" id="ARR-LT-ATW"/>
+                            <constraint firstAttribute="centerX" secondItem="khe-bG-0y6" secondAttribute="centerX" id="GzM-22-T5z"/>
+                            <constraint firstAttribute="centerX" secondItem="1MY-0w-kx3" secondAttribute="centerX" id="KcQ-d1-5T1"/>
+                            <constraint firstItem="1MY-0w-kx3" firstAttribute="top" secondItem="Q5w-jx-g0c" secondAttribute="bottom" constant="20" id="Nk5-bg-a65"/>
+                            <constraint firstItem="8O5-Sb-gmr" firstAttribute="top" secondItem="1MY-0w-kx3" secondAttribute="bottom" constant="13" id="O4B-Ab-XoE"/>
+                            <constraint firstItem="khe-bG-0y6" firstAttribute="leading" secondItem="iMh-5a-nie" secondAttribute="leading" constant="25" id="ctY-hu-Iro"/>
+                            <constraint firstAttribute="centerX" secondItem="8O5-Sb-gmr" secondAttribute="centerX" id="hE1-cE-vf0"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="8O5-Sb-gmr" secondAttribute="trailing" constant="9" id="qrw-sQ-8cp"/>
+                            <constraint firstAttribute="trailing" secondItem="khe-bG-0y6" secondAttribute="trailing" constant="25" id="whS-L1-pQe"/>
+                            <constraint firstItem="khe-bG-0y6" firstAttribute="top" secondItem="8O5-Sb-gmr" secondAttribute="bottom" constant="14" id="z30-Tt-Dq2"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="default appearance" id="QtR-0O-x3u"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="downloadButton" destination="1MY-0w-kx3" id="Gnj-hg-ZTJ"/>
+                        <outlet property="imageView" destination="khe-bG-0y6" id="mqW-c3-Nif"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pH6-qp-AU9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="22" y="-432"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="M7o-3z-JFs">
+            <objects>
+                <tabBarController id="KHt-n0-t4W" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="KIX-5P-40h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="FkK-Aq-NJ0" kind="relationship" relationship="viewControllers" id="qlS-y1-I1l"/>
+                        <segue destination="4TN-fF-nTR" kind="relationship" relationship="viewControllers" id="6qZ-co-w8s"/>
+                        <segue destination="hbQ-aF-baB" kind="relationship" relationship="viewControllers" id="Ed5-gp-lhf"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E0J-ZJ-cbj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-798" y="-101"/>
+        </scene>
+        <!--components-->
+        <scene sceneID="B5V-zI-C4P">
+            <objects>
+                <viewController id="hbQ-aF-baB" customClass="PKViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZPa-Nk-Vg2"/>
+                        <viewControllerLayoutGuide type="bottom" id="gji-NN-EFs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="u3W-z2-kf3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ey-eP-h9P">
+                                <rect key="frame" x="67" y="34" width="279" height="64"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofj-1H-Rl0" customClass="PKPendingView">
+                                        <rect key="frame" x="223" y="7" width="48" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="K6q-hd-Zg1"/>
+                                            <constraint firstAttribute="width" constant="48" id="aSx-vf-ccM"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="emptyLineRadians">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Re1-Qd-FCJ" customClass="PKStopDownloadButton">
+                                        <rect key="frame" x="86" y="3" width="49" height="58"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="0.017112916230000001" green="0.84933960639999995" blue="0.19406885660000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="49" id="3wC-8j-1fQ"/>
+                                            <constraint firstAttribute="height" constant="58" id="gas-uU-Tqr"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="stopButtonWidth">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                                <real key="value" value="0.20000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="filledLineStyleOuter" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="filledLineWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="emptyLineWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ma8-7f-OwN" customClass="PKCircleProgressView">
+                                        <rect key="frame" x="19" y="8" width="45" height="48"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="0.91183960639999995" green="0.2122707861" blue="0.2385538415" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="IJI-mx-uQw"/>
+                                            <constraint firstAttribute="height" constant="48" id="Nlq-n8-mdA"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                                <real key="value" value="0.40000000000000002"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="filledLineWidth">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="emptyLineWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s7i-J5-aQM" customClass="PKCircleView">
+                                        <rect key="frame" x="160" y="8" width="42" height="47"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="42" id="1sG-kI-B8q"/>
+                                            <constraint firstAttribute="height" constant="47" id="J63-1G-ug2"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="startAngleRadians">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="endAngleRadians">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.18374367350000001" green="0.64609963550000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="ofj-1H-Rl0" secondAttribute="centerY" id="1R5-eM-6Br"/>
+                                    <constraint firstAttribute="centerY" secondItem="Re1-Qd-FCJ" secondAttribute="centerY" id="Jf8-iW-Jhb"/>
+                                    <constraint firstAttribute="width" constant="279" id="Mrm-V9-FqY"/>
+                                    <constraint firstItem="ofj-1H-Rl0" firstAttribute="leading" secondItem="s7i-J5-aQM" secondAttribute="trailing" constant="21" id="NiX-pd-la8"/>
+                                    <constraint firstItem="Ma8-7f-OwN" firstAttribute="leading" secondItem="2Ey-eP-h9P" secondAttribute="leading" constant="19" id="QJW-6i-nnW"/>
+                                    <constraint firstItem="s7i-J5-aQM" firstAttribute="leading" secondItem="Re1-Qd-FCJ" secondAttribute="trailing" constant="25" id="XuZ-Tj-5x4"/>
+                                    <constraint firstAttribute="height" constant="64" id="Y9B-Fa-Onc"/>
+                                    <constraint firstAttribute="centerY" secondItem="Ma8-7f-OwN" secondAttribute="centerY" id="kfc-sm-VPv"/>
+                                    <constraint firstAttribute="centerY" secondItem="s7i-J5-aQM" secondAttribute="centerY" id="mCn-wZ-T4x"/>
+                                    <constraint firstAttribute="trailing" secondItem="ofj-1H-Rl0" secondAttribute="trailing" constant="8" id="pfG-bm-kw6"/>
+                                    <constraint firstItem="Re1-Qd-FCJ" firstAttribute="leading" secondItem="Ma8-7f-OwN" secondAttribute="trailing" constant="22" id="yfz-U1-5w7"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Utl-Lm-uAB">
+                                <rect key="frame" x="68" y="126" width="279" height="64"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nsl-MC-ZIE" customClass="PKPendingView">
+                                        <rect key="frame" x="223" y="7" width="48" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="1" green="0.61658785240000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="1aV-e9-ViD"/>
+                                            <constraint firstAttribute="height" constant="50" id="mKJ-ZU-dr5"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <real key="value" value="1.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="emptyLineRadians">
+                                                <real key="value" value="1.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="spinTime">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AEb-EX-XpU" customClass="PKStopDownloadButton">
+                                        <rect key="frame" x="86" y="3" width="49" height="58"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="0.82984110740000006" green="0.1603828417" blue="0.85933183700000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="58" id="lsV-4g-yMb"/>
+                                            <constraint firstAttribute="width" constant="49" id="qab-7A-Gxc"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="stopButtonWidth">
+                                                <real key="value" value="9"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                                <real key="value" value="0.20000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                <real key="value" value="21"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="filledLineStyleOuter" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="filledLineWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="emptyLineWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hy1-cZ-LcQ" customClass="PKCircleProgressView">
+                                        <rect key="frame" x="19" y="8" width="45" height="48"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="9j8-uI-4jU"/>
+                                            <constraint firstAttribute="width" constant="45" id="z00-Jh-U91"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                                <real key="value" value="0.20000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="filledLineWidth">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="emptyLineWidth">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                <real key="value" value="17"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="filledLineStyleOuter" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cj6-LU-DY1" customClass="PKCircleView">
+                                        <rect key="frame" x="160" y="8" width="42" height="47"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="0.1779229074" green="0.8564399171" blue="0.78396962290000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="42" id="GOf-Ye-4rE"/>
+                                            <constraint firstAttribute="height" constant="47" id="xSD-rr-Sn2"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="startAngleRadians">
+                                                <real key="value" value="-2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="endAngleRadians">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Hy1-cZ-LcQ" firstAttribute="leading" secondItem="Utl-Lm-uAB" secondAttribute="leading" constant="19" id="1XB-oa-py1"/>
+                                    <constraint firstItem="cj6-LU-DY1" firstAttribute="leading" secondItem="AEb-EX-XpU" secondAttribute="trailing" constant="25" id="4kZ-wN-3Mx"/>
+                                    <constraint firstAttribute="centerY" secondItem="cj6-LU-DY1" secondAttribute="centerY" id="6fi-MA-owK"/>
+                                    <constraint firstAttribute="trailing" secondItem="Nsl-MC-ZIE" secondAttribute="trailing" constant="8" id="8H8-4z-eG8"/>
+                                    <constraint firstAttribute="centerY" secondItem="AEb-EX-XpU" secondAttribute="centerY" id="Cxj-dX-Gf5"/>
+                                    <constraint firstAttribute="height" constant="64" id="JSd-zH-9cg"/>
+                                    <constraint firstAttribute="centerY" secondItem="Hy1-cZ-LcQ" secondAttribute="centerY" id="Mm6-Ki-2YW"/>
+                                    <constraint firstAttribute="centerY" secondItem="Nsl-MC-ZIE" secondAttribute="centerY" id="UvT-uW-450"/>
+                                    <constraint firstAttribute="width" constant="279" id="a2m-GF-fZw"/>
+                                    <constraint firstItem="AEb-EX-XpU" firstAttribute="leading" secondItem="Hy1-cZ-LcQ" secondAttribute="trailing" constant="22" id="bww-S7-nqE"/>
+                                    <constraint firstItem="Nsl-MC-ZIE" firstAttribute="leading" secondItem="cj6-LU-DY1" secondAttribute="trailing" constant="21" id="geO-l4-jWx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="2Ey-eP-h9P" secondAttribute="centerX" id="Gcf-jf-Kxm"/>
+                            <constraint firstItem="Utl-Lm-uAB" firstAttribute="top" secondItem="2Ey-eP-h9P" secondAttribute="bottom" constant="28" id="MQF-Kp-4L6"/>
+                            <constraint firstItem="2Ey-eP-h9P" firstAttribute="top" secondItem="ZPa-Nk-Vg2" secondAttribute="bottom" constant="14" id="iD0-0A-zEY"/>
+                            <constraint firstAttribute="centerX" secondItem="Utl-Lm-uAB" secondAttribute="centerX" id="xgB-R1-ADq"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="components" id="xAQ-zO-9az"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hvF-u2-i9J" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-214" y="1249"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="handsome" width="600" height="804"/>
+        <image name="majestic" width="3062" height="3121"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

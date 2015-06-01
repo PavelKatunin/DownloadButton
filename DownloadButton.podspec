@@ -10,21 +10,21 @@
 Pod::Spec.new do |s|
   s.name             = "DownloadButton"
   s.version          = "0.1.0"
-  s.summary          = "A short description of DownloadButton."
+  s.summary          = "Customizable Appstore style download button."
   s.description      = <<-DESC
-                       An optional longer description of DownloadButton
+                       Customizable Appstore style download button, and other UI components
 
                        * Markdown format.
                        * Don't worry about the indent, we strip it!
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/DownloadButton"
+  s.homepage         = "https://github.com/PavelKatunin/DownloadButton"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Pavel Katunin" => "wk.katunin@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/DownloadButton.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/PavelKatunin/DownloadButton.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/KatuninP'
 
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '8.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
     'DownloadButton' => ['Pod/Assets/*.png']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.public_header_files = 'Pod/Classes/**/*.h'
+  s.frameworks = 'UIKit'
+
 end

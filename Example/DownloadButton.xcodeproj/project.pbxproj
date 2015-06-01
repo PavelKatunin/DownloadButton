@@ -23,6 +23,10 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		95E2A0A07B08B42217597EA8 /* Pods_DownloadButton_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C309993895A4717E99C5A7E0 /* Pods_DownloadButton_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		E995E4DA1B1CD49100016C7D /* PKCustomAppearanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E995E4D31B1CD49100016C7D /* PKCustomAppearanceViewController.m */; };
+		E995E4DB1B1CD49100016C7D /* PKDefaultAppearanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E995E4D51B1CD49100016C7D /* PKDefaultAppearanceViewController.m */; };
+		E995E4DC1B1CD49100016C7D /* PKDownloaderSimulator.m in Sources */ = {isa = PBXBuildFile; fileRef = E995E4D71B1CD49100016C7D /* PKDownloaderSimulator.m */; };
+		E995E4DD1B1CD49100016C7D /* PKDownloadPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E995E4D91B1CD49100016C7D /* PKDownloadPictureViewController.m */; };
 		F418D99A2550875B457FD2E2 /* Pods_DownloadButton_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBDE0507B5F71A82458F56CF /* Pods_DownloadButton_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -39,7 +43,7 @@
 /* Begin PBXFileReference section */
 		2D71C3386F8EB97171D15FE1 /* Pods-DownloadButton_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DownloadButton_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DownloadButton_Tests/Pods-DownloadButton_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		472CCFED9F426FEA6581C93A /* DownloadButton.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = DownloadButton.podspec; path = ../DownloadButton.podspec; sourceTree = "<group>"; };
-		6003F58A195388D20070C39A /* DownloadButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = DownloadButton.app; path = DownloadButton_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F58A195388D20070C39A /* DownloadButton_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DownloadButton_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -54,7 +58,7 @@
 		6003F5A5195388D20070C39A /* PKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKViewController.h; sourceTree = "<group>"; };
 		6003F5A6195388D20070C39A /* PKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6003F5AE195388D20070C39A /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Tests.xctest; path = DownloadButton_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F5AE195388D20070C39A /* DownloadButton_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DownloadButton_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -66,6 +70,14 @@
 		D2F6ADEF0095906E3D058B67 /* Pods-DownloadButton_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DownloadButton_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DownloadButton_Example/Pods-DownloadButton_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DBAC2099B5C146840AFC297B /* Pods-DownloadButton_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DownloadButton_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-DownloadButton_Example/Pods-DownloadButton_Example.release.xcconfig"; sourceTree = "<group>"; };
 		DBDE0507B5F71A82458F56CF /* Pods_DownloadButton_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DownloadButton_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E995E4D21B1CD49100016C7D /* PKCustomAppearanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKCustomAppearanceViewController.h; sourceTree = "<group>"; };
+		E995E4D31B1CD49100016C7D /* PKCustomAppearanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKCustomAppearanceViewController.m; sourceTree = "<group>"; };
+		E995E4D41B1CD49100016C7D /* PKDefaultAppearanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKDefaultAppearanceViewController.h; sourceTree = "<group>"; };
+		E995E4D51B1CD49100016C7D /* PKDefaultAppearanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKDefaultAppearanceViewController.m; sourceTree = "<group>"; };
+		E995E4D61B1CD49100016C7D /* PKDownloaderSimulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKDownloaderSimulator.h; sourceTree = "<group>"; };
+		E995E4D71B1CD49100016C7D /* PKDownloaderSimulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKDownloaderSimulator.m; sourceTree = "<group>"; };
+		E995E4D81B1CD49100016C7D /* PKDownloadPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKDownloadPictureViewController.h; sourceTree = "<group>"; };
+		E995E4D91B1CD49100016C7D /* PKDownloadPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKDownloadPictureViewController.m; sourceTree = "<group>"; };
 		F6DF376A39DCA4465220F401 /* Pods-DownloadButton_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DownloadButton_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DownloadButton_Tests/Pods-DownloadButton_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,8 +122,8 @@
 		6003F58B195388D20070C39A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6003F58A195388D20070C39A /* DownloadButton.app */,
-				6003F5AE195388D20070C39A /* Tests.xctest */,
+				6003F58A195388D20070C39A /* DownloadButton_Example.app */,
+				6003F5AE195388D20070C39A /* DownloadButton_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,6 +144,14 @@
 		6003F593195388D20070C39A /* Example for DownloadButton */ = {
 			isa = PBXGroup;
 			children = (
+				E995E4D21B1CD49100016C7D /* PKCustomAppearanceViewController.h */,
+				E995E4D31B1CD49100016C7D /* PKCustomAppearanceViewController.m */,
+				E995E4D41B1CD49100016C7D /* PKDefaultAppearanceViewController.h */,
+				E995E4D51B1CD49100016C7D /* PKDefaultAppearanceViewController.m */,
+				E995E4D61B1CD49100016C7D /* PKDownloaderSimulator.h */,
+				E995E4D71B1CD49100016C7D /* PKDownloaderSimulator.m */,
+				E995E4D81B1CD49100016C7D /* PKDownloadPictureViewController.h */,
+				E995E4D91B1CD49100016C7D /* PKDownloadPictureViewController.m */,
 				6003F59C195388D20070C39A /* PKAppDelegate.h */,
 				6003F59D195388D20070C39A /* PKAppDelegate.m */,
 				6003F59F195388D20070C39A /* Main_iPhone.storyboard */,
@@ -216,7 +236,7 @@
 			);
 			name = DownloadButton_Example;
 			productName = DownloadButton;
-			productReference = 6003F58A195388D20070C39A /* DownloadButton.app */;
+			productReference = 6003F58A195388D20070C39A /* DownloadButton_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6003F5AD195388D20070C39A /* DownloadButton_Tests */ = {
@@ -237,7 +257,7 @@
 			);
 			name = DownloadButton_Tests;
 			productName = DownloadButtonTests;
-			productReference = 6003F5AE195388D20070C39A /* Tests.xctest */;
+			productReference = 6003F5AE195388D20070C39A /* DownloadButton_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -395,7 +415,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* PKAppDelegate.m in Sources */,
+				E995E4DB1B1CD49100016C7D /* PKDefaultAppearanceViewController.m in Sources */,
+				E995E4DD1B1CD49100016C7D /* PKDownloadPictureViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* PKViewController.m in Sources */,
+				E995E4DA1B1CD49100016C7D /* PKCustomAppearanceViewController.m in Sources */,
+				E995E4DC1B1CD49100016C7D /* PKDownloaderSimulator.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,6 +559,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DownloadButton/DownloadButton-Prefix.pch";
 				INFOPLIST_FILE = "DownloadButton/DownloadButton-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -550,6 +575,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DownloadButton/DownloadButton-Prefix.pch";
 				INFOPLIST_FILE = "DownloadButton/DownloadButton-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
