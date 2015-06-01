@@ -9,6 +9,10 @@ Customizable appstore style download button.
 
 ![Default button](https://cloud.githubusercontent.com/assets/1636737/7920830/2c4470da-08aa-11e5-99be-e7e9a04479f8.png)
 
+Customizable designable components. Editing with IB.
+
+![Custom button](https://cloud.githubusercontent.com/assets/1636737/7920909/7403d906-08aa-11e5-92d5-f92a09bc2bdc.png)
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
