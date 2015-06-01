@@ -75,6 +75,9 @@ Appearance customization:
 
 ```objective-c
 
+#import "UIImage+PKDownloadButton.h"
+#import "UIButton+PKDownloadButton.h"
+
 [self.downloadButton.downloadedButton cleanDefaultAppearance];
 [self.downloadButton.downloadedButton setBackgroundImage:[UIImage buttonBackgroundWithColor:[UIColor redColor]]
 forState:UIControlStateNormal];
