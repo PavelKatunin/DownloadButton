@@ -16,6 +16,11 @@ Customizable designable components. Editing with IB.
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
+Check example project to see usage.
+
+```objective-c
+#import <DownloadButton/PKDownloadButton.h>
+```
 
 ## Requirements
 
