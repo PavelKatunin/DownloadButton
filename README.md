@@ -7,10 +7,7 @@
 
 Customizable appstore style download button.
 
-![Default button](https://cloud.githubusercontent.com/assets/1636737/7920524/59c4fd24-08a8-11e5-8ac0-ea8667f335c1.png)
-![Default button](https://cloud.githubusercontent.com/assets/1636737/7920521/59c059cc-08a8-11e5-910d-92abda31df5b.png)
-![Default button](https://cloud.githubusercontent.com/assets/1636737/7920522/59c3c5a8-08a8-11e5-9a74-6de19e5c1047.png)
-![Default button](https://cloud.githubusercontent.com/assets/1636737/7920523/59c3b996-08a8-11e5-8092-45d3a0d640ea.png)
+![Default button](https://cloud.githubusercontent.com/assets/1636737/7920830/2c4470da-08aa-11e5-99be-e7e9a04479f8.png)
 
 ## Usage
 
