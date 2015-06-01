@@ -7,6 +7,8 @@
 
 Customizable appstore style download button.
 
+![Default button](https://cloud.githubusercontent.com/assets/1636737/7920524/59c4fd24-08a8-11e5-8ac0-ea8667f335c1.png)
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
