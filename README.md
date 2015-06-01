@@ -17,6 +17,9 @@ Customizable designable components. Editing with IB.
 
 ![Custom button](https://cloud.githubusercontent.com/assets/1636737/7920909/7403d906-08aa-11e5-92d5-f92a09bc2bdc.png)
 
+![Designable button](https://cloud.githubusercontent.com/assets/1636737/7921499/92a772ba-08ae-11e5-9222-e5bd229de6b2.gif)
+
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.

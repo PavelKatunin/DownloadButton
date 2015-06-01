@@ -208,17 +208,17 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ma8-7f-OwN" customClass="PKCircleProgressView">
                                         <rect key="frame" x="19" y="8" width="45" height="48"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="tintColor" red="0.91183960639999995" green="0.2122707861" blue="0.2385538415" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.29623790360377322" green="0.91183960639999995" blue="0.28428774464729939" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="IJI-mx-uQw"/>
                                             <constraint firstAttribute="height" constant="48" id="Nlq-n8-mdA"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="progress">
-                                                <real key="value" value="0.40000000000000002"/>
+                                                <real key="value" value="0.90000000000000002"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="filledLineWidth">
-                                                <real key="value" value="15"/>
+                                                <real key="value" value="7"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="emptyLineWidth">
                                                 <real key="value" value="1"/>
@@ -240,10 +240,10 @@
                                                 <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="startAngleRadians">
-                                                <real key="value" value="1"/>
+                                                <real key="value" value="3"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="endAngleRadians">
-                                                <real key="value" value="5"/>
+                                                <real key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -300,7 +300,7 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="stopButtonWidth">
-                                                <real key="value" value="9"/>
+                                                <real key="value" value="12"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="progress">
                                                 <real key="value" value="0.20000000000000001"/>
@@ -310,10 +310,10 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="filledLineStyleOuter" value="NO"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="filledLineWidth">
-                                                <real key="value" value="2"/>
+                                                <real key="value" value="6"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="emptyLineWidth">
-                                                <real key="value" value="1"/>
+                                                <real key="value" value="3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -338,7 +338,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="radius">
                                                 <real key="value" value="17"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="filledLineStyleOuter" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="filledLineStyleOuter" value="NO"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cj6-LU-DY1" customClass="PKCircleView">
