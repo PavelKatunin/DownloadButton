@@ -7,6 +7,8 @@
 
 Customizable appstore style download button.
 
+![Default button animation](https://cloud.githubusercontent.com/assets/1636737/7921348/7fadc250-08ad-11e5-9f01-9f7e1f173a97.gif)
+
 ![Default button](https://cloud.githubusercontent.com/assets/1636737/7920830/2c4470da-08aa-11e5-99be-e7e9a04479f8.png)
 
 Customizable designable components. Editing with IB.
