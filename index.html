@@ -1,34 +1,25 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>Downloadbutton by PavelKatunin</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Downloadbutton</h1>
-        <p>Customizable Appstore style download button</p>
+    <section class="page-header">
+      <h1 class="project-name">Downloadbutton</h1>
+      <h2 class="project-tagline">Customizable Appstore style download button</h2>
+      <a href="https://github.com/PavelKatunin/DownloadButton" class="btn">View on GitHub</a>
+      <a href="https://github.com/PavelKatunin/DownloadButton/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/PavelKatunin/DownloadButton/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-        <p class="view"><a href="https://github.com/PavelKatunin/DownloadButton">View the Project on GitHub <small>PavelKatunin/DownloadButton</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/PavelKatunin/DownloadButton/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/PavelKatunin/DownloadButton/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/PavelKatunin/DownloadButton">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
+    <section class="main-content">
+      <h1>
 <a id="downloadbutton" class="anchor" href="#downloadbutton" aria-hidden="true"><span class="octicon octicon-link"></span></a>DownloadButton</h1>
 
 <p><a href="https://travis-ci.org/Pavel%20Katunin/DownloadButton"><img src="http://img.shields.io/travis/Pavel%20Katunin/DownloadButton.svg?style=flat" alt="CI Status"></a>
@@ -36,13 +27,106 @@
 <a href="http://cocoapods.org/pods/DownloadButton"><img src="https://img.shields.io/cocoapods/l/DownloadButton.svg?style=flat" alt="License"></a>
 <a href="http://cocoapods.org/pods/DownloadButton"><img src="https://img.shields.io/cocoapods/p/DownloadButton.svg?style=flat" alt="Platform"></a></p>
 
+<p>Customizable appstore style download button.</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/1636737/7921348/7fadc250-08ad-11e5-9f01-9f7e1f173a97.gif" alt="Default button animation"></p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/1636737/7920830/2c4470da-08aa-11e5-99be-e7e9a04479f8.png" alt="Default button"></p>
+
+<p>Customizable designable components. Editing with IB.</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/1636737/7921396/ec8b21c4-08ad-11e5-99a4-c73c971c0d42.gif" alt="Custom button animation"></p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/1636737/7920909/7403d906-08aa-11e5-92d5-f92a09bc2bdc.png" alt="Custom button"></p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/1636737/7921499/92a772ba-08ae-11e5-9222-e5bd229de6b2.gif" alt="Designable button"></p>
+
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<p>To run the example project, clone the repo, and run <code>pod install</code> from the Example directory first.</p>
+<p>To run the example project, clone the repo, and run <code>pod install</code> from the Example directory first.
+Check example project to see usage.</p>
+
+<div class="highlight highlight-objective-c"><pre>#<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">&lt;</span>DownloadButton/PKDownloadButton.h<span class="pl-pds">&gt;</span></span></pre></div>
+
+<p>Usage for representing network operations:</p>
+
+<div class="highlight highlight-objective-c"><pre>#<span class="pl-k">pragma mark</span> - PKDownloadButtonDelegate
+
+- (<span class="pl-k">void</span>)downloadButtonTapped:(PKDownloadButton *)downloadButton 
+                currentState:(PKDownloadButtonState)state {
+    <span class="pl-k">switch</span> (state) {
+        <span class="pl-k">case</span> <span class="pl-c1">kPKDownloadButtonState_StartDownload</span>:
+            self.<span class="pl-smi">downloadButton</span>.<span class="pl-smi">state</span> = <span class="pl-c1">kPKDownloadButtonState_Pending</span>;
+            [<span class="pl-v">self</span>.pendingSimulator <span class="pl-c1">startDownload</span>];
+        <span class="pl-k">break</span>;
+        <span class="pl-k">case</span> <span class="pl-c1">kPKDownloadButtonState_Pending</span>:
+            [<span class="pl-v">self</span>.pendingSimulator <span class="pl-c1">cancelDownload</span>];
+            self.<span class="pl-smi">downloadButton</span>.<span class="pl-smi">state</span> = <span class="pl-c1">kPKDownloadButtonState_StartDownload</span>;
+        <span class="pl-k">break</span>;
+            <span class="pl-k">case</span> <span class="pl-c1">kPKDownloadButtonState_Downloading</span>:
+            [<span class="pl-v">self</span>.downloaderSimulator <span class="pl-c1">cancelDownload</span>];
+            self.<span class="pl-smi">downloadButton</span>.<span class="pl-smi">state</span> = <span class="pl-c1">kPKDownloadButtonState_StartDownload</span>;
+        <span class="pl-k">break</span>;
+        <span class="pl-k">case</span> <span class="pl-c1">kPKDownloadButtonState_Downloaded</span>:
+            self.<span class="pl-smi">downloadButton</span>.<span class="pl-smi">state</span> = <span class="pl-c1">kPKDownloadButtonState_StartDownload</span>;
+            self.<span class="pl-smi">imageView</span>.<span class="pl-smi">hidden</span> = <span class="pl-c1">YES</span>;
+        <span class="pl-k">break</span>;
+        <span class="pl-k">default</span>:
+            <span class="pl-en">NSAssert</span>(<span class="pl-c1">NO</span>, <span class="pl-s"><span class="pl-pds">@"</span>unsupported state<span class="pl-pds">"</span></span>);
+        <span class="pl-k">break</span>;
+    }
+}
+
+#<span class="pl-k">pragma mark</span> - DownloaderSimulatorDelegate
+
+- (<span class="pl-k">void</span>)simulator:(PKDownloaderSimulator *)simulator didUpdateProgress:(<span class="pl-k">double</span>)progress {
+    <span class="pl-k">if</span> (simulator == self.<span class="pl-smi">pendingSimulator</span>) {
+        <span class="pl-k">if</span> (progress == <span class="pl-c1">1</span>.) {
+            self.<span class="pl-smi">downloadButton</span>.<span class="pl-smi">state</span> = <span class="pl-c1">kPKDownloadButtonState_Downloading</span>;
+            [<span class="pl-v">self</span>.downloaderSimulator <span class="pl-c1">startDownload</span>];
+        }
+    }
+    <span class="pl-k">else</span> <span class="pl-k">if</span> (simulator == self.<span class="pl-smi">downloaderSimulator</span>) {
+        self.<span class="pl-smi">downloadButton</span>.<span class="pl-smi">stopDownloadButton</span>.<span class="pl-smi">progress</span> = progress;
+        <span class="pl-k">if</span> (progress == <span class="pl-c1">1</span>) {
+            self.<span class="pl-smi">downloadButton</span>.<span class="pl-smi">state</span> = <span class="pl-c1">kPKDownloadButtonState_Downloaded</span>;
+            self.<span class="pl-smi">imageView</span>.<span class="pl-smi">hidden</span> = <span class="pl-c1">NO</span>;
+        }
+    }
+}</pre></div>
+
+<p>Appearance customization:</p>
+
+<div class="highlight highlight-objective-c"><pre>
+#<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">"</span>UIImage+PKDownloadButton.h<span class="pl-pds">"</span></span>
+#<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">"</span>UIButton+PKDownloadButton.h<span class="pl-pds">"</span></span>
+
+[<span class="pl-v">self</span>.downloadButton.downloadedButton <span class="pl-c1">cleanDefaultAppearance</span>];
+[<span class="pl-v">self</span>.downloadButton.downloadedButton <span class="pl-c1">setBackgroundImage:</span>[UIImage <span class="pl-c1">buttonBackgroundWithColor:</span>[UIColor <span class="pl-c1">redColor</span>]]
+<span class="pl-c1">forState:</span>UIControlStateNormal];
+[<span class="pl-v">self</span>.downloadButton.downloadedButton <span class="pl-c1">setBackgroundImage:</span>[UIImage <span class="pl-c1">highlitedButtonBackgroundWithColor:</span>[UIColor <span class="pl-c1">redColor</span>]]
+<span class="pl-c1">forState:</span>UIControlStateHighlighted];
+[<span class="pl-v">self</span>.downloadButton.downloadedButton <span class="pl-c1">setTitle:</span><span class="pl-s"><span class="pl-pds">@"</span>delete<span class="pl-pds">"</span></span> <span class="pl-c1">forState:</span>UIControlStateNormal];
+[<span class="pl-v">self</span>.downloadButton.downloadedButton <span class="pl-c1">setTitleColor:</span>[UIColor <span class="pl-c1">redColor</span>] <span class="pl-c1">forState:</span>UIControlStateNormal];
+[<span class="pl-v">self</span>.downloadButton.downloadedButton <span class="pl-c1">setTitleColor:</span>[UIColor <span class="pl-c1">whiteColor</span>] <span class="pl-c1">forState:</span>UIControlStateHighlighted];
+
+self.downloadButton.stopDownloadButton.tintColor = [UIColor <span class="pl-c1">blackColor</span>];
+self.downloadButton.stopDownloadButton.filledLineStyleOuter = <span class="pl-c1">YES</span>;
+
+self.downloadButton.pendingView.tintColor = [UIColor <span class="pl-c1">orangeColor</span>];
+self.downloadButton.pendingView.radius = <span class="pl-c1">24</span>.f;
+self.downloadButton.pendingView.emptyLineRadians = <span class="pl-c1">2</span>.f;
+self.downloadButton.pendingView.spinTime = <span class="pl-c1">3</span>.f;
+
+[<span class="pl-v">self</span>.downloadButton.startDownloadButton <span class="pl-c1">cleanDefaultAppearance</span>];
+[<span class="pl-v">self</span>.downloadButton.startDownloadButton <span class="pl-c1">setImage:</span>[UIImage <span class="pl-c1">imageNamed:</span><span class="pl-s"><span class="pl-pds">@"</span>download_default<span class="pl-pds">"</span></span>] <span class="pl-c1">forState:</span>UIControlStateNormal];
+</pre></div>
 
 <h2>
 <a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<p>Requires iOS SDK version &gt; 8.0</p>
 
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
@@ -61,13 +145,16 @@ it, simply add the following line to your Podfile:</p>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
 
 <p>DownloadButton is available under the Apache License, Version 2.0. See the LICENSE file for more info.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/PavelKatunin">PavelKatunin</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/PavelKatunin/DownloadButton">Downloadbutton</a> is maintained by <a href="https://github.com/PavelKatunin">PavelKatunin</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+
+    </section>
+
+  
   </body>
 </html>
+
