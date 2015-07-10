@@ -7,7 +7,6 @@
 //
 
 #import "PKCircleProgressView.h"
-#import "UIColor+PKDownloadButton.h"
 #import "PKCircleView.h"
 #import "NSLayoutConstraint+PKDownloadButton.h"
 
