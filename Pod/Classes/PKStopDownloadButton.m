@@ -31,7 +31,7 @@ static PKStopDownloadButton *CommonInit(PKStopDownloadButton *self) {
         self.stopButton = stopButton;
         
         [self addConstraints:[self createStopButtonConstraints]];
-		[self updateAppearance];
+        [self updateAppearance];
         [self setNeedsDisplay];
     }
     return self;

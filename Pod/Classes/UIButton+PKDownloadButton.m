@@ -12,11 +12,11 @@
 @implementation UIButton (PKDownloadButton)
 
 - (void)configureDefaultAppearance {
-    UIImage *backImage = [UIImage buttonBackgroundWithColor:[self tintColor]];
+    UIImage *backImage = [UIImage buttonBackgroundWithColor:self.tintColor];
     [self setBackgroundImage:[backImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.f, 15.f, 15.f, 15.f)]
                     forState:UIControlStateNormal];
     
-    [self setBackgroundImage:[UIImage highlitedButtonBackgroundWithColor:[self tintColor]]
+    [self setBackgroundImage:[UIImage highlitedButtonBackgroundWithColor:self.tintColor]
                     forState:UIControlStateHighlighted];
 }
 
