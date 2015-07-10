@@ -7,7 +7,6 @@
 //
 
 #import "PKCircleView.h"
-#import "UIColor+PKDownloadButton.h"
 
 static const CGFloat kDefaultLineWidth = 1.f;
 

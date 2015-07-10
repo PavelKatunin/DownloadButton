@@ -7,7 +7,6 @@
 //
 
 #import "PKStopDownloadButton.h"
-#import "UIColor+PKDownloadButton.h"
 #import "NSLayoutConstraint+PKDownloadButton.h"
 #import "UIImage+PKDownloadButton.h"
 
@@ -19,6 +18,7 @@ static const CGFloat kDefaultStopButtonWidth = 8.f;
 
 - (UIButton *)createStopButton;
 - (NSArray *)createStopButtonConstraints;
+- (void)updateAppearance;
 - (PKCircleProgressView *)createCircleProgressView;
 
 @end
@@ -31,7 +31,7 @@ static PKStopDownloadButton *CommonInit(PKStopDownloadButton *self) {
         self.stopButton = stopButton;
         
         [self addConstraints:[self createStopButtonConstraints]];
-        
+        [self updateAppearance];
         [self setNeedsDisplay];
     }
     return self;
@@ -45,14 +45,6 @@ static PKStopDownloadButton *CommonInit(PKStopDownloadButton *self) {
     _stopButtonWidth = stopButtonWidth;
     [self.stopButton setImage:[UIImage stopImageOfSize:stopButtonWidth
                                                  color:self.tintColor]
-                     forState:UIControlStateNormal];
-    [self setNeedsDisplay];
-}
-
-- (void)setTintColor:(UIColor *)tintColor {
-    [super setTintColor:tintColor];
-    [self.stopButton setImage:[UIImage stopImageOfSize:self.stopButtonWidth
-                                                 color:tintColor]
                      forState:UIControlStateNormal];
     [self setNeedsDisplay];
 }
@@ -71,11 +63,8 @@ static PKStopDownloadButton *CommonInit(PKStopDownloadButton *self) {
 
 - (UIButton *)createStopButton {
     UIButton *stopButton = [UIButton buttonWithType:UIButtonTypeCustom];
+	stopButton.tintColor = [UIColor clearColor];
     _stopButtonWidth = kDefaultStopButtonWidth;
-    [stopButton setImage:[UIImage stopImageOfSize:_stopButtonWidth
-                                            color:[UIColor defaultDwonloadButtonBlueColor]]
-                forState:UIControlStateNormal];
-    
     return stopButton;
 }
 
@@ -93,4 +82,15 @@ static PKStopDownloadButton *CommonInit(PKStopDownloadButton *self) {
     return circleProgressView;
 }
 
+#pragma mark - appearance
+
+- (void)updateAppearance {
+	[self.stopButton setImage:[UIImage stopImageOfSize:_stopButtonWidth color:self.tintColor]
+				forState:UIControlStateNormal];
+}
+
+- (void)tintColorDidChange {
+	[super tintColorDidChange];
+	[self updateAppearance];
+}
 @end

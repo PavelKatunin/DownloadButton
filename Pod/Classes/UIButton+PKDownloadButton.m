@@ -8,17 +8,21 @@
 
 #import "UIButton+PKDownloadButton.h"
 #import "UIImage+PKDownloadButton.h"
-#import "UIColor+PKDownloadButton.h"
 
 @implementation UIButton (PKDownloadButton)
 
 - (void)configureDefaultAppearance {
-    UIImage *backImage = [UIImage buttonBackgroundWithColor:[UIColor defaultDwonloadButtonBlueColor]];
+    UIImage *backImage = [UIImage buttonBackgroundWithColor:self.tintColor];
     [self setBackgroundImage:[backImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.f, 15.f, 15.f, 15.f)]
                     forState:UIControlStateNormal];
     
-    [self setBackgroundImage:[UIImage highlitedButtonBackgroundWithColor:[UIColor defaultDwonloadButtonBlueColor]]
+    [self setBackgroundImage:[UIImage highlitedButtonBackgroundWithColor:self.tintColor]
                     forState:UIControlStateHighlighted];
+}
+
+
+- (void)tintColorDidChange {
+	[self configureDefaultAppearance];
 }
 
 - (void)cleanDefaultAppearance {
