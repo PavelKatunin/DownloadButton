@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "PKStopDownloadButton.h"
+#import "PKBorderedButton.h"
 #import "PKCircleProgressView.h"
 #import "PKPendingView.h"
 
@@ -36,9 +37,9 @@ IB_DESIGNABLE
 @property (nonatomic, weak) IBOutlet id <PKDownloadButtonDelegate> delegate;
 @property (nonatomic, copy) DownloadButtonTappedCallback callback;
 
-@property (nonatomic, weak, readonly) UIButton *startDownloadButton;
+@property (nonatomic, weak, readonly) PKBorderedButton *startDownloadButton;
 @property (nonatomic, weak, readonly) PKStopDownloadButton *stopDownloadButton;
-@property (nonatomic, weak, readonly) UIButton *downloadedButton;
+@property (nonatomic, weak, readonly) PKBorderedButton *downloadedButton;
 @property (nonatomic, weak, readonly) PKPendingView *pendingView;
 
 @property (nonatomic, assign) PKDownloadButtonState state;

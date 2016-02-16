@@ -1,15 +1,15 @@
 //
-//  UIButton+PKDownloadButton.m
-//  Download
+//  PKBorderedButton.m
+//  Pods
 //
-//  Created by Pavel on 01/06/15.
-//  Copyright (c) 2015 Katunin. All rights reserved.
+//  Created by Holden, Ryan on 2/7/16.
+//
 //
 
-#import "UIButton+PKDownloadButton.h"
+#import "PKBorderedButton.h"
 #import "UIImage+PKDownloadButton.h"
 
-@implementation UIButton (PKDownloadButton)
+@implementation PKBorderedButton
 
 - (void)configureDefaultAppearance {
     UIImage *backImage = [UIImage buttonBackgroundWithColor:self.tintColor];
@@ -22,7 +22,8 @@
 
 
 - (void)tintColorDidChange {
-	[self configureDefaultAppearance];
+    [super tintColorDidChange];
+    [self configureDefaultAppearance];
 }
 
 - (void)cleanDefaultAppearance {
