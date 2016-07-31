@@ -98,12 +98,20 @@ static PKDownloadButton *CommonInit(PKDownloadButton *self) {
 - (void)tintColorDidChange {
 	[super tintColorDidChange];
 	
-	[self updateButton:self.startDownloadButton title:@"DOWNLOAD"];
-	[self updateButton:self.downloadedButton title:@"REMOVE"];
+	[self updateButton:self.startDownloadButton title:self.startDownloadButton.titleLabel.text];
+	[self updateButton:self.downloadedButton title:self.downloadedButton.titleLabel.text];
 }
 
 
 #pragma mark - appearance
+
+-(void)updateStartDownloadButtonText:(NSString *)title {
+    [self updateButton:self.startDownloadButton title:title];
+}
+
+-(void)updateDownloadedButtonText:(NSString *)title {
+    [self updateButton:self.downloadedButton title:title];
+}
 
 - (void)updateButton:(UIButton *)button title:(NSString *)title {
 	NSAttributedString *attrTitle = [[NSAttributedString alloc] initWithString:title attributes:DefaultTitleAttributes(self.tintColor)];
