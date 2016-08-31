@@ -12,16 +12,6 @@
 #import "UIImage+PKDownloadButton.h"
 #import "PKPendingView.h"
 
-static NSDictionary *DefaultTitleAttributes(UIColor *color) {
-    return @{ NSForegroundColorAttributeName : color,
-              NSFontAttributeName : [UIFont systemFontOfSize:14.f]};
-}
-
-static NSDictionary *HighlitedTitleAttributes() {
-    return @{ NSForegroundColorAttributeName : [UIColor whiteColor],
-              NSFontAttributeName : [UIFont systemFontOfSize:14.f]};
-}
-
 @interface PKDownloadButton ()
 
 @property (nonatomic, weak) PKBorderedButton *startDownloadButton;
@@ -98,8 +88,8 @@ static PKDownloadButton *CommonInit(PKDownloadButton *self) {
 - (void)tintColorDidChange {
 	[super tintColorDidChange];
 	
-	[self updateButton:self.startDownloadButton title:self.startDownloadButton.titleLabel.text];
-	[self updateButton:self.downloadedButton title:self.downloadedButton.titleLabel.text];
+    [self updateButton:self.startDownloadButton title:[self.startDownloadButton titleForState:UIControlStateNormal] font:self.startDownloadButton.titleLabel.font];
+	[self updateButton:self.downloadedButton title:[self.downloadedButton titleForState:UIControlStateNormal] font:self.downloadedButton.titleLabel.font];
 }
 
 
@@ -113,11 +103,30 @@ static PKDownloadButton *CommonInit(PKDownloadButton *self) {
     [self updateButton:self.downloadedButton title:title];
 }
 
+
+-(void)updateStartDownloadButtonText:(NSString *)title font:(UIFont *)font {
+    [self updateButton:self.startDownloadButton title:title font: font];
+}
+
+-(void)updateDownloadedButtonText:(NSString *)title font:(UIFont *)font {
+    [self updateButton:self.downloadedButton title:title font: font];
+}
+
+
 - (void)updateButton:(UIButton *)button title:(NSString *)title {
-	NSAttributedString *attrTitle = [[NSAttributedString alloc] initWithString:title attributes:DefaultTitleAttributes(self.tintColor)];
-	[button setAttributedTitle:attrTitle forState:UIControlStateNormal];
-	NSAttributedString *highlitedTitle = [[NSAttributedString alloc] initWithString:title attributes:HighlitedTitleAttributes()];
-	[button setAttributedTitle:highlitedTitle forState:UIControlStateHighlighted];
+    [self updateButton:button title:title font:[UIFont systemFontOfSize:14.f]];
+}
+
+- (void)updateButton:(UIButton *)button title:(NSString *)title font:(UIFont *)font {
+    if (title == nil) {
+        title = @"";
+    }
+    
+    [button setTitle:title forState:UIControlStateNormal];
+    [button setTitleColor:self.tintColor forState:UIControlStateNormal];
+    [button setTitleColor:UIColor.whiteColor forState:UIControlStateHighlighted];
+    
+    button.titleLabel.font = font;
 }
 
 #pragma mark - private methods
