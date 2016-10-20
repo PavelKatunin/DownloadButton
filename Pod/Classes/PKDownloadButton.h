@@ -46,5 +46,7 @@ IB_DESIGNABLE
 
 -(void)updateStartDownloadButtonText:(NSString *)title;
 -(void)updateDownloadedButtonText:(NSString *)title;
+-(void)updateStartDownloadButtonText:(NSString *)title font:(UIFont *)font;
+-(void)updateDownloadedButtonText:(NSString *)title font:(UIFont *)font;
 
 @end
