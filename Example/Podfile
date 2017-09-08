@@ -1,15 +1,21 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
+platform :ios, '8.0'
 
-target 'DownloadButton_Example', :exclusive => true do
+def shared_pods
   pod "DownloadButton", :path => "../"
 end
 
-target 'DownloadButton_Tests', :exclusive => true do
-  pod "DownloadButton", :path => "../"
+target 'DownloadButton_Example' do
+  shared_pods
+end
+
+target 'DownloadButton_Tests' do
+  shared_pods
 
   pod 'Specta'
   pod 'Expecta'
   pod 'FBSnapshotTestCase'
   pod 'Expecta+Snapshots'
 end
+
