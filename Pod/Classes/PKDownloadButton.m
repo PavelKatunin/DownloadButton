@@ -39,6 +39,7 @@ static PKDownloadButton *CommonInit(PKDownloadButton *self) {
         [self addConstraints:[self createConstraints]];
         
         self.state = kPKDownloadButtonState_StartDownload;
+        self.backgroundColor = [UIColor clearColor];
     }
     return self;
 }
