@@ -62,6 +62,7 @@ static PKDownloadButton *CommonInit(PKDownloadButton *self) {
             break;
         case kPKDownloadButtonState_Pending:
             self.pendingView.hidden = NO;
+            [self.pendingView startSpin];
             break;
         case kPKDownloadButtonState_Downloading:
             self.stopDownloadButton.hidden = NO;
