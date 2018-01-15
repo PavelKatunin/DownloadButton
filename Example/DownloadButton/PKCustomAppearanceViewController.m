@@ -16,10 +16,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.downloadButton.downloadedButton cleanDefaultAppearance];
-    [self.downloadButton.downloadedButton setBackgroundImage:[UIImage buttonBackgroundWithColor:[UIColor redColor]]
-                                                    forState:UIControlStateNormal];
-    [self.downloadButton.downloadedButton setBackgroundImage:[UIImage highlitedButtonBackgroundWithColor:[UIColor redColor]]
-                                                    forState:UIControlStateHighlighted];
+    [self.downloadButton.downloadedButton setTintColor:UIColor.redColor];
     [self.downloadButton.downloadedButton setTitle:@"delete" forState:UIControlStateNormal];
     [self.downloadButton.downloadedButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [self.downloadButton.downloadedButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
