@@ -11,19 +11,32 @@
 
 @implementation PKBorderedButton
 
+- (void)setCornerRadius:(CGFloat)cornerRadius {
+    _cornerRadius = cornerRadius;
+    [self updateBackgroundImage];
+}
+
+- (void)setLineWidth:(CGFloat)lineWidth {
+    _lineWidth = lineWidth;
+    [self updateBackgroundImage];
+}
+
 - (void)configureDefaultAppearance {
-    UIImage *backImage = [UIImage buttonBackgroundWithColor:self.tintColor];
-    [self setBackgroundImage:[backImage resizableImageWithCapInsets:UIEdgeInsetsMake(15.f, 15.f, 15.f, 15.f)]
+    [self setCornerRadius:4];
+    [self setLineWidth:1];
+}
+
+- (void)updateBackgroundImage {
+    [self setBackgroundImage:[UIImage borderedImageWithFill:nil radius:self.cornerRadius lineColor:self.tintColor lineWidth:self.lineWidth]
                     forState:UIControlStateNormal];
-    
-    [self setBackgroundImage:[UIImage highlitedButtonBackgroundWithColor:self.tintColor]
+
+    [self setBackgroundImage:[UIImage borderedImageWithFill:self.tintColor radius:self.cornerRadius lineColor:self.tintColor lineWidth:self.lineWidth]
                     forState:UIControlStateHighlighted];
 }
 
-
 - (void)tintColorDidChange {
     [super tintColorDidChange];
-    [self configureDefaultAppearance];
+    [self updateBackgroundImage];
 }
 
 - (void)cleanDefaultAppearance {
