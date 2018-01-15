@@ -26,42 +26,24 @@
     return image;
 }
 
-+ (UIImage *)buttonBackgroundWithColor:(UIColor *)color {
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(30.f, 30.f), NO, 0.0f);
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    [color setStroke];
-    
-    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(2.f, 2.f, 26.f, 26.f)
-                                                          cornerRadius:4.f];
-    CGContextSetStrokeColorWithColor(context, color.CGColor);
-    bezierPath.lineWidth = 1.f;
-    [bezierPath stroke];
-    
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
-    return [image resizableImageWithCapInsets:UIEdgeInsetsMake(10.f, 10.f, 10.f, 10.f)];
-}
++ (UIImage *)borderedImageWithFill:(UIColor *)fillColor radius:(CGFloat)radius lineColor:(UIColor *)lineColor lineWidth:(CGFloat)lineWidth {
 
-+ (UIImage *)highlitedButtonBackgroundWithColor:(UIColor *)color {
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(30.f, 30.f), NO, 0.0f);
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    [color setStroke];
-    
-    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(2.f, 2.f, 26.f, 26.f)
-                                                          cornerRadius:4.f];
-    CGContextSetStrokeColorWithColor(context, color.CGColor);
-    bezierPath.lineWidth = 1.f;
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(radius * 2, radius * 2), NO, 0.0f);
+
+    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(lineWidth,lineWidth,(radius - lineWidth) * 2, (radius - lineWidth) * 2)
+                                                          cornerRadius:radius];
+    bezierPath.lineWidth = lineWidth;
+
+    if (lineColor) [lineColor setStroke];
+    if (fillColor) [fillColor setFill];
+
     [bezierPath stroke];
-    [color setFill];
-    [bezierPath fill];
     
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    
+
     UIGraphicsEndImageContext();
-    return [image resizableImageWithCapInsets:UIEdgeInsetsMake(10.f, 10.f, 10.f, 10.f)];
+
+    return [image resizableImageWithCapInsets:UIEdgeInsetsMake(radius, radius, radius, radius)];
 }
 
 @end
