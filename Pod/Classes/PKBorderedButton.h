@@ -10,6 +10,9 @@
 
 @interface PKBorderedButton : UIButton
 
+@property (nonatomic) CGFloat cornerRadius;
+@property (nonatomic) CGFloat lineWidth;
+
 - (void)configureDefaultAppearance;
 
 - (void)cleanDefaultAppearance;
